@@ -3,12 +3,12 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 const blogRoutes = require('./routes/blogRoutes');
 
+
 // express app
 const app = express();
 
 // connect to mongodb
-const dbURI = 'mongodb+srv://tem0krilenmistol:oTM38WzRPRI6N7uE@nodejscrash.l42eaxt.mongodb.net/node-cc?retryWrites=true&w=majority&appName=nodejscrash'
-mongoose.connect(dbURI)
+mongoose.connect(process.env.DB_URI)
 .then((result) => app.listen(3000))
 .catch((err) => {console.log(err)})
 
